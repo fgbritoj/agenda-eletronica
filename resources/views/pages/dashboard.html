@@ -1,0 +1,62 @@
+<!-- End Navbar -->
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
+      <div class="card">
+        <div class="card p-3 pt-2">
+          <div
+            class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+            <i class="fa fa-calendar-check-o"></i>
+          </div>
+          <div class="text-end pt-1">
+            <p class="text-sm mb-0 ">Eventos Hoje</p>
+            <h4 class="mb-0">{$day}</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
+      <div class="card">
+        <div class="card p-3 pt-2">
+          <div
+            class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+            <i class="fa fa-calendar-minus-o"></i>
+          </div>
+          <div class="text-end pt-1">
+            <p class="text-sm mb-0 ">Eventos da Semana</p>
+            <h4 class="mb-0">{$week}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
+      <div class="card">
+        <div class="card p-3 pt-2">
+          <div
+            class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+            <i class="fa fa-calendar"></i>
+          </div>
+          <div class="text-end pt-1">
+            <p class="text-sm mb-0 ">Eventos do Mês</p>
+            <h4 class="mb-0">{$month}</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="row mt-4">
+    <script src="/resources/views/assets/js/calendar.js"></script>
+
+    <div id="calendar" class="card p-4"></div>
+    
+    <!-- <form action="/" method="post" name="date">
+      <input type="hidden" name="day" value="">
+      <input type="hidden" name="month" value="">
+      <input type="hidden" name="year" value="">
+    </form> -->
+
+  </div>
+</div>

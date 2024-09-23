@@ -1,0 +1,45 @@
+.p-04 {
+    padding: 0.3rem !important;
+    padding-top: 0.3rem !important;
+    padding-right: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
+    padding-left: 0.3rem !important;
+}
+
+.mt-4-5{
+    margin-top: 62px;
+}
+
+#calendar {
+    max-width: 1761px;
+    height: 690px;
+    margin: 0 auto;
+}
+
+.fc .fc-button-primary{
+    background: #bbb1b1 ;
+    border-color: #838080;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active{
+    background: #bbb1b1 ;
+    border-color: #838080;
+
+}
+
+.fc .fc-button-primary:disabled{
+    background: #c7c5c5 ;
+
+}
+
+.fc .fc-button-primary:hover{
+    background:  #838080;
+}
+
+.fc-toolbar-title{
+    text-transform: lowercase;
+}
+
+.fc-toolbar-title:first-letter{
+    text-transform: uppercase;
+}
