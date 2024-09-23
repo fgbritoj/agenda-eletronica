@@ -6,10 +6,21 @@ use Src\Controllers\ServiceController;
 use Src\Controllers\ThemeController;
 use Src\Controllers\TypeController;
 
+// $app->get('/', function($resquest, $response) {
+
+//     if(isset($_SESSION['user'])) {
+//         return $response->withRedirect('/');
+//     } else {
+//         return $response->withRedirect('/login');
+//     }
+// });
+
 $app->get('/login', LoginController::class);
-// $app->post('/login', [LoginController::class,'login']);
 $app->post('/login', \Src\Controllers\LoginController::class . ':login');
 $app->get('/logout', [LoginController::class,'logout']);
+
+
+
 
 $app->map(['GET','POST'],'/', ServiceController::class);
 

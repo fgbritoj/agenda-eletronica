@@ -39,9 +39,9 @@ class EventController extends Controller{
 
     }
 
-    public function viewCreate(){
+    public function viewCreate(ServerRequestInterface $request, ResponseInterface $response, array $args){
 
-        UsersService::verifyLogin();
+        UsersService::verifyLogin($response);
 
         $page = new Page();
     
@@ -52,9 +52,9 @@ class EventController extends Controller{
 
     }
 
-    public function viewUpdate($request, $response, array $args){
+    public function viewUpdate(ServerRequestInterface $request, ResponseInterface $response, array $args){
 
-        UsersService::verifyLogin();
+        UsersService::verifyLogin($response);
         
         $event = new EventService();
 
@@ -70,9 +70,9 @@ class EventController extends Controller{
 
     }
 
-    public function update($request, $response, array $args){
+    public function update(ServerRequestInterface $request, ResponseInterface $response, array $args){
 
-        UsersService::verifyLogin();
+        UsersService::verifyLogin($response);
 
         $event = new EventService();
 
@@ -90,9 +90,9 @@ class EventController extends Controller{
 
     }
 
-    public function create(){
+    public function create(ServerRequestInterface $request, ResponseInterface $response, array $args){
 
-        UsersService::verifyLogin();
+        UsersService::verifyLogin($response);
 
         $event = new EventService();
 
@@ -110,9 +110,9 @@ class EventController extends Controller{
 
     }
 
-    public function delete($request, $response, array $args){
+    public function delete(ServerRequestInterface $request, ResponseInterface $response, array $args){
 
-        UsersService::verifyLogin();
+        UsersService::verifyLogin($response);
 
         $event = new EventService();
 

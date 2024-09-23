@@ -26,18 +26,17 @@ class LoginController extends Controller{
 
         if(!$result){
             self::setMessage('Usuário inexistente ou senha inválida!','warning');
-            // Controller::redirect('/login');
-            // return self::redirect($response, '/login');
             return $response->withRedirect('/login');
-
         }
+
+
+        $_SESSION['user'] = $result;
 
         // Controller::redirect('/');
         // return self::redirect($response, '/');
         // return $response->withRedirect('/');
 
-        $response = $response->withRedirect('/');
-        return $response;
+        return $response->withRedirect('/');
     }
 
     public function logout(){
