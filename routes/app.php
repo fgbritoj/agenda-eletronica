@@ -25,13 +25,22 @@ $app->get('/logout', [LoginController::class,'logout']);
 $app->map(['GET','POST'],'/', ServiceController::class);
 
 // Products Group
-$app->group('/eventos', function ($group){
-    $group->map(['GET','POST'],'',EventController::class);
-    $group->get('/create',[EventController::class,'viewCreate']);
-    $group->post('/create',[EventController::class,'create']);
-    $group->get('/update/{id}',[EventController::class,'viewUpdate']);
-    $group->post('/update/{id}',[EventController::class,'update']);
-    $group->get('/delete/{id}',[EventController::class,'delete']);
+// $app->group('/eventos', function ($group){
+//     $group->map(['GET','POST'],'',EventController::class);
+//     $group->get('/create',[EventController::class,'viewCreate']);
+//     $group->post('/create',[EventController::class,'create']);
+//     $group->get('/update/{id}',[EventController::class,'viewUpdate']);
+//     $group->post('/update/{id}',[EventController::class,'update']);
+//     $group->get('/delete/{id}',[EventController::class,'delete']);
+// });
+
+$app->group('/eventos', function ($group) {
+    $group->map(['GET', 'POST'], '', EventController::class);
+    $group->get('/create', EventController::class . ':viewCreate');
+    $group->post('/create', EventController::class . ':create');
+    $group->get('/update/{id}', EventController::class . ':viewUpdate');
+    $group->post('/update/{id}', EventController::class . ':update');
+    $group->get('/delete/{id}', EventController::class . ':delete');
 });
 
 $app->group('/tipos', function ($group){

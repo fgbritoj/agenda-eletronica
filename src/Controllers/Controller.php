@@ -57,7 +57,8 @@ class Controller{
 		}
 
 		$first_page = $pages[$section][0]['page']-1 == 0 ? $current_page : $pages[$section][0]['page']-1 ;
-		$last_page = $pages[$section][9]['page']+1;
+		$last_page = ($pages[$section][9]['page'] ?? 0) + 1;
+		// $last_page = $pages[$section][9]['page']+1;
 
 		$more = [
 			1 => [ "link" => 'page='.$first_page, "page"=>$first_page],
