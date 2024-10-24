@@ -83,17 +83,15 @@ class TypeController extends Controller{
 
         if(!$result){
             self::setMessage('Preencha todos os campos.','warning');
-            Controller::redirect('/tipos/update/'.$args['id']);
+            return Controller::redirect($response, '/tipos/update/'.$args['id']);
         }
 
         self::setMessage('Registro atualizado com sucesso.','success');
-        Controller::redirect('/tipos');
+        return Controller::redirect($response, '/tipos');
 
     }
 
     public function create(ServerRequestInterface $request, ResponseInterface $response, array $args){
-
-        //print_r($_POST);exit;
 
         UsersService::verifyLogin($response);
 
@@ -105,11 +103,11 @@ class TypeController extends Controller{
 
         if(!$result){
             self::setMessage('Preencha todos os campos.','warning');
-            Controller::redirect('/tipos/create');
+            return Controller::redirect($response, '/tipos/create');
         }
 
         self::setMessage('Registro cadastrado com sucesso.','success');
-        Controller::redirect('/tipos');
+        return Controller::redirect($response, '/tipos');
 
     }
 
@@ -123,11 +121,11 @@ class TypeController extends Controller{
 
         if(!$result){
             self::setMessage('Não foi possível excluir o registro!','warning');
-            Controller::redirect('/tipos');
+            return Controller::redirect($response, '/tipos');
         }
 
         self::setMessage('Registro excluído com sucesso.','success');
-        Controller::redirect('/tipos');
+        return Controller::redirect($response, '/tipos');
 
     }
 

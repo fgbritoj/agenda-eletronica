@@ -83,11 +83,11 @@ class ThemeController extends Controller{
 
         if(!$result){
             self::setMessage('Preencha todos os campos.','warning');
-            Controller::redirect('/temas/update/'.$args['id']);
+            return Controller::redirect($response, '/temas/update/'.$args['id']);
         }
 
         self::setMessage('Registro atualizado com sucesso.','success');
-        Controller::redirect('/temas');
+        return Controller::redirect($response, '/temas');
 
     }
 
@@ -103,11 +103,11 @@ class ThemeController extends Controller{
 
         if(!$result){
             self::setMessage('Preencha todos os campos.','warning');
-            Controller::redirect('/temas/create');
+            return Controller::redirect($response, '/temas/create');
         }
 
         self::setMessage('Registro cadastrado com sucesso.','success');
-        Controller::redirect('/temas');
+        return Controller::redirect($response, '/temas');
 
     }
 
@@ -121,11 +121,11 @@ class ThemeController extends Controller{
 
         if(!$result){
             self::setMessage('Não foi possível excluir o registro!','warning');
-            Controller::redirect('/temas');
+            return Controller::redirect($response, '/temas');
         }
 
         self::setMessage('Registro excluído com sucesso.','success');
-        Controller::redirect('/temas');
+        return Controller::redirect($response, '/temas');
 
     }
 
