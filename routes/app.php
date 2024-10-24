@@ -47,7 +47,6 @@ $app->group('/tipos', function ($group){
 $app->group('/temas', function ($group){
     $group->map(['GET', 'POST'], '', ThemeController::class);
     $group->get('/create', ThemeController::class . ':viewCreate');
-    // $group->get('/create', \Src\Controllers\ThemeController::class . ':viewCreate');
     $group->post('/create', ThemeController::class . ':create');
     $group->get('/update/{id}', ThemeController::class . ':viewUpdate');
     $group->post('/update/{id}', ThemeController::class . ':update');
