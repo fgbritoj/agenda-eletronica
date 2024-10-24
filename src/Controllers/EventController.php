@@ -34,7 +34,7 @@ class EventController extends Controller{
             'pages'=>$result['pages'],
             'more'=>$result['more'],
             'alert' => self::getMessage(),
-            'filter' => $_POST,
+            'filter' => $_POST,     
         ]);
 
     }
@@ -82,11 +82,11 @@ class EventController extends Controller{
 
         if(!$result){
             self::setMessage('Preencha todos os campos.','warning');
-            Controller::redirect('/eventos/update/'.$args['id']);
+            return Controller::redirect($response, '/eventos/update/'.$args['id']);
         }
 
         self::setMessage('Registro atualizado com sucesso.','success');
-        Controller::redirect('/eventos');
+        return Controller::redirect($response, '/eventos');
 
     }
 
@@ -95,18 +95,17 @@ class EventController extends Controller{
         UsersService::verifyLogin($response);
 
         $event = new EventService();
-
         $event->setData($_POST);
 
         $result = $event->save();
 
         if(!$result){
             self::setMessage('Preencha todos os campos.','warning');
-            Controller::redirect('/eventos/create');
+            return Controller::redirect($response, '/eventos/create');
         }
 
         self::setMessage('Registro cadastrado com sucesso.','success');
-        Controller::redirect('/eventos');
+        return Controller::redirect($response, '/eventos');
 
     }
 
@@ -120,11 +119,11 @@ class EventController extends Controller{
 
         if(!$result){
             self::setMessage('Não foi possível excluir o registro!','warning');
-            Controller::redirect('/eventos');
+            return Controller::redirect($response, '/eventos');
         }
 
         self::setMessage('Registro excluído com sucesso.','success');
-        Controller::redirect('/eventos');
+        return Controller::redirect($response, '/eventos');
 
     }
 

@@ -8,6 +8,9 @@ class ThemeService extends Theme{
 
     public static function listAll($data){
         
+        $filter = '';
+        $filter2 = '';
+
         if($data['value'] != ''){
             $filter = " AND name LIKE '%$data[value]%' ";
         }

@@ -142,11 +142,19 @@ class Model{
 		// Se o tipo for 2 ele ativa a hora
 		$time = $type == 2 ? 'H:i' : '';
 		
-		$value = date("Y-m-d $time",$date);
+		// $value = date("Y-m-d $time",$date);
 
 		// Se for date for 'now' a função retorna a data de hoje
 		if($date == 'now'){
 			$value = $obj->format("Y-m-d $time");
+		} else {
+			// Se a data for uma string, converte para timestamp
+			if (is_string($date)) {
+				$date = strtotime($date);
+			}
+			
+			// Formata a data usando o timestamp
+			$value = date("Y-m-d $time", $date);
 		}
 
 		return $value;
